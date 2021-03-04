@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Hexo">
+    <meta name="keywords" content="STL与容器, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Hexo</title>
+    <title>STL与容器 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">STL与容器</h1>
                 </div>
             </div>
         </div>
@@ -430,9 +430,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -444,7 +448,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-11
+                    2021-03-04
                 </div>
                 
 
@@ -453,7 +457,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    74
+                    177
                 </div>
                 
 
@@ -480,15 +484,261 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="hello-hexo"><a href="#hello-hexo" class="headerlink" title="hello hexo"></a>hello hexo</h2><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h2 id="STL与容器"><a href="#STL与容器" class="headerlink" title="STL与容器"></a>STL与容器</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>STL(standard template library)标准模板库</p>
+<p>容器container</p>
+<p>算法algorithm</p>
+<p>迭代器iterator</p>
+<p>容器：各种数据结构，用于存放数据，如：vector,list,deque,set,map</p>
+<p>​    STL容器就是将最常用的数据结构实现出来</p>
+<p>​    最常用的数据结构：数组，链表，树，图，队列，集合</p>
+<p>算法：操作容器，如：sort，find，copy，for_each</p>
+<p>迭代器：提供一种方法，使之能遍历容器中所有的元素，而又不暴露元素内部的方法</p>
+<p>​    类似于指针</p>
+<h3 id="容器算法迭代器初识"><a href="#容器算法迭代器初识" class="headerlink" title="容器算法迭代器初识"></a>容器算法迭代器初识</h3><h4 id="vector存放内置数据类型"><a href="#vector存放内置数据类型" class="headerlink" title="vector存放内置数据类型"></a>vector存放内置数据类型</h4><p>容器：vector</p>
+<p>算法：for_each</p>
+<p>迭代器：vector&lt;int,&gt;iterator</p>
+<pre class=" language-c++"><code class="language-c++">void print(int val)
+&#123;
+    cout << val << endl;
+&#125;
+void test01()
+&#123;
+    vector<int> v;
+    v.push_back(10);
+    v.push_back(20);
+    v.push_back(30);
+    v.push_back(40);
+    vector<int>::iterator begin = v.begin();
+    vector<int>::iterator end = v.end();
+    /*
+    * while (begin != end)
+    &#123;
+        cout << *begin << endl;
+        begin++;
+    &#125;
+    */
+    for_each(begin, end, print);
+&#125;</code></pre>
+<h4 id="vector存放自定义数据类型"><a href="#vector存放自定义数据类型" class="headerlink" title="vector存放自定义数据类型"></a>vector存放自定义数据类型</h4><pre class=" language-c++"><code class="language-c++">#include<vector>
+using namespace std;
+#include<string>
+class person &#123;
+public:
+    string m_name;
+    int m_age;
+public:
+    person(string name, int age)
+    &#123;
+        this->m_name = name;
+        this->m_age = age;
+    &#125;
+
+&#125;;
+void test01()
+&#123;
+    vector<person> p;
+    person p1("aaa", 0);
+    person p2("bbb", 3);
+    p.push_back(p1);
+    p.push_back(p2);
+    for (vector<person>::iterator it = p.begin(); it != p.end(); it++)
+    &#123;
+        cout << "name:" << (*it).m_name << endl << "age:" << (*it).m_age << endl;
+    &#125;
+&#125;
+void test02()
+&#123;
+    vector<person*> p;  //参数列表中为person*
+    person p1("aaa", 0);
+    person p2("bbb", 3);
+    p.push_back(&p1);
+    p.push_back(&p2);
+    for (vector<person*>::iterator it = p.begin(); it != p.end(); it++)
+    &#123;
+        person* p = (*it);  //it为一个指向指针的指针，it解引用是一个指针赋给p
+        cout << "name:" << p->m_name << endl << "age:" << p->m_age << endl;
+    &#125;
+&#125;</code></pre>
+<p><strong><u>vector容器嵌套容器</u></strong></p>
+<h3 id="STL常用容器"><a href="#STL常用容器" class="headerlink" title="STL常用容器"></a>STL常用容器</h3><h4 id="string类"><a href="#string类" class="headerlink" title="string类"></a>string类</h4><h5 id="string类构造"><a href="#string类构造" class="headerlink" title="string类构造"></a>string类构造</h5><ul>
+<li><code>string();</code>        </li>
+<li><code>string(const char*s);</code></li>
+<li><code>string(const string&amp;str);</code></li>
+<li><code>string(int n,char c);</code></li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">void test01()
+&#123;
+    //string字符串的4种构造方式
+    string str1;//空字符串
+    cout << str1 << endl;
+
+    const char* s = "hello";
+    string str2 = s;        //字符数组
+    cout << str2 << endl;
+
+    const string str = "world";
+    string str3 = str;        //同类stirng类对象
+    cout << str3 << endl;
+
+    string str4 = string(10, 'a');        //相同数量的字符
+    cout << str4 << endl;
+&#125;
+/*
+=>
+
+hello
+world
+aaaaaaaaaa
+*/</code></pre>
+<h5 id="string赋值操作"><a href="#string赋值操作" class="headerlink" title="string赋值操作"></a>string赋值操作</h5><p>注意一些方法不能用于初始化，但是可以用于赋值</p>
+<ul>
+<li><code>string&amp; operator=(const char*s);</code></li>
+<li><code>string&amp; operator=(const string &amp;str);</code></li>
+<li><code>string&amp;operator=(char c);</code></li>
+<li><code>string&amp; assign(const char*s);</code></li>
+<li><code>string&amp;assign(const char*s ,int n);</code></li>
+<li><code>string&amp;assign(const string &amp;s);</code></li>
+<li><code>string&amp;assign(int n,char c);</code></li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">void test01()
+&#123;
+    string str1 = "hell";    //用字符串赋值
+    string str2 = str1;        //同类对象赋值
+    //string str3 = 'o';
+    string str3;
+    str3 = 'o';                //可以使用字符赋值，但不可用字符初始化
+    //string str4.assign("wor"); //同上
+    string str4;
+    str4.assign("wor");
+    string str5;
+    str5.assign(str4);
+&#125;</code></pre>
+<p>assign不是很常用的方法，用作了解</p>
+<h5 id="string拼接"><a href="#string拼接" class="headerlink" title="string拼接"></a>string拼接</h5><pre class=" language-c++"><code class="language-c++">void test01()
+&#123;
+    string str1 = "i ";
+    str1 += "love ";
+    string str2 = "game";
+    str1 += str2;
+    str1 += ':';
+    cout << str1;
+&#125;
+=> i love game:</code></pre>
+<pre class=" language-c++"><code class="language-c++">void test02()
+&#123;
+    string str1;
+    str1 = 'i';
+    str1.append(" love");
+    str1.append(" game abcde", 5);        //从开始读取5个字符
+    str1.append("dnf lol wzry", 3, 4);    //从下标3开始读取4个字符
+    cout << str1;
+&#125;
+=> i love game lol</code></pre>
+<h5 id="string查找与替换"><a href="#string查找与替换" class="headerlink" title="string查找与替换"></a>string查找与替换</h5><p>函数原型：</p>
+<ul>
+<li><code>int find(const char *s,int pos=0) const;</code>查找字符串出现的位置，从pos开始查找</li>
+<li><code>int rfind(const char*s,int pos=npos) const;</code>同上</li>
+<li><code>string&amp; replace(int pos,int n,const char*s);</code>替换从pos开始的n个字符为字符串s</li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">void test01()
+&#123;
+    string str = "abcdefgde";
+    int pos = str.find("de");
+    cout << "pos: " << pos << endl;
+    pos = str.rfind("de");
+    cout << "pos: " << pos << endl;
+&#125;
+//find查找从左往右，rfind从右往左
+//find找到字符串后返回查找的第一个字符位置，找不到返回-1
+=>
+    pos: 3
+    pos: 7</code></pre>
+<pre class=" language-c++"><code class="language-c++">void test02()
+&#123;
+    string str = "1234567";
+    str.replace(2, 3, "11111");
+    cout << str;
+&#125;
+//replace在替换时，要指定从哪个位置起，多少个字符，替换成什么
+=> 
+    121111167</code></pre>
+<h5 id="string字符比较"><a href="#string字符比较" class="headerlink" title="string字符比较"></a>string字符比较</h5><p>函数原型：</p>
+<ul>
+<li><code>int compare(const char *s) const</code></li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">void test03()
+&#123;
+    string str1 = "hello";
+    string str2 = "hello ";
+    int ret = str1.compare(str2);
+    if (ret == 0)
+    &#123;
+        cout << "str1=str2";
+    &#125;
+    else
+        cout << "str1!=str2";
+&#125;
+//等于返回0
+//大于返回1
+//小于返回-1
+=> 
+    str1!=str2</code></pre>
+<p>字符串比较主要用于判断两个字符串是否相等</p>
+<h5 id="string字符串存取"><a href="#string字符串存取" class="headerlink" title="string字符串存取"></a>string字符串存取</h5><p>函数原型：</p>
+<ul>
+<li><code>char&amp; operator[](int n);</code></li>
+<li><code>char&amp; at(int n);</code></li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">void test04()
+&#123;
+    string str = "hello world";
+    str[3] = 'x';
+    for (int i = 0; i < str.size(); i++)
+        cout << str[i];
+    cout << endl;
+    str.at(5) = 'x';
+    for (int i = 0; i < str.size(); i++)
+        cout << str.at(i);
+    cout << endl;
+&#125;
+=> 
+    helxo world
+    helxoxworld</code></pre>
+<h5 id="string插入和删除"><a href="#string插入和删除" class="headerlink" title="string插入和删除"></a>string插入和删除</h5><p>函数原型：</p>
+<ul>
+<li><code>string&amp; insert(int pos ,const char*s);</code></li>
+<li><code>string&amp; erase(int pos,int n=npos);</code></li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">void test05()
+&#123;
+    string str;
+    str = "hello world";
+    str.insert(5, "   ");  //插入位置，插入字符
+    cout << str << endl;
+    str.erase(2, 5);         //从2号位置开始5个字符
+    cout << str << endl;
+&#125;
+//插入和删除的起始下标都是从0开始的
+=> 
+    hello    world
+    he   world</code></pre>
+<h5 id="string子串"><a href="#string子串" class="headerlink" title="string子串"></a>string子串</h5><p>函数原型：</p>
+<ul>
+<li><code>string sbustr(int pos=0,int n=npos) const;</code></li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">void test06()
+&#123;
+    string str = "abcd";
+    string str1 = str.substr(0, 2);
+    cout << str1 << endl;
+    string str2 = "228178@qq.com";
+    int pos = str2.find("@");
+    string str3 = str2.substr(0, pos);
+    cout << str3;
+&#125;
+=>
+    ab
+    228178</code></pre>
 
                 
             </div>
@@ -515,7 +765,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://1doctorc1.github.io/2021/01/11/hello-world/">https://1doctorc1.github.io/2021/01/11/hello-world/</a>
+                    <a href="https://1doctorc1.github.io/2021/03/04/stl-yu-rong-qi/">https://1doctorc1.github.io/2021/03/04/stl-yu-rong-qi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -552,7 +802,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -724,13 +978,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/01/31/c-qi-mo-fu-xi/">
+                <a href="/2021/03/04/stl-chang-yong-rong-qi-2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="C++期末复习">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="STL常用容器2">
                         
-                        <span class="card-title">C++期末复习</span>
+                        <span class="card-title">STL常用容器2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -741,7 +995,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-31
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-04
                         </span>
                         <span class="publish-author">
                             
@@ -754,8 +1008,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
                 </div>
@@ -766,16 +1020,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/11/hello-world/">
+                <a href="/2021/02/05/python/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="python">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">python</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -786,7 +1040,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-05
                             </span>
                         <span class="publish-author">
                             
@@ -796,7 +1050,14 @@
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Hexo">
+    <meta name="keywords" content="STL常用容器2, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Hexo</title>
+    <title>STL常用容器2 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">STL常用容器2</h1>
                 </div>
             </div>
         </div>
@@ -430,9 +430,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -444,7 +448,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-11
+                    2021-03-04
                 </div>
                 
 
@@ -453,7 +457,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    74
+                    399
                 </div>
                 
 
@@ -480,15 +484,512 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="hello-hexo"><a href="#hello-hexo" class="headerlink" title="hello hexo"></a>hello hexo</h2><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <p>STL常用容器2</p>
+<p>STL是低阶码农的归宿。—《不知名弹幕》</p>
+<p>推荐赫斌老师的数据结构。  —《某不知名弹幕》</p>
+<p>STL中List和vector是两个最常被使用的容器</p>
+<h2 id="vector容器"><a href="#vector容器" class="headerlink" title="vector容器"></a>vector容器</h2><p><img src="C:\Users\张驰\AppData\Roaming\Typora\typora-user-images\image-20210301110110707.png" alt="image-20210301110110707"></p>
+<ul>
+<li>前端封闭，不可以从前端插入数</li>
+<li><code>front()//首个元素</code></li>
+<li><code>back()//最后一个元素</code></li>
+<li><code>push_back()//尾插</code></li>
+<li><code>pop_back()//删除尾部数据</code></li>
+<li><code>v.begin()//第一个元素的位置</code></li>
+<li><code>v.rbegin()//最后一个元素的位置</code></li>
+<li><code>v.end()//最后一个元素的下一个位置</code></li>
+<li><code>v.rend()//第一个元素的前一个位置</code></li>
+<li><code>insert()//插入</code></li>
+</ul>
+<p>vector可以视作数组，但是和数组有区别</p>
+<p>数组的空间大小在程序运行前就已经分配完成，是静态空间</p>
+<p>而vector可以动态拓展，动态拓展不是指在原有的内存空间续借空间，而是指将数据拷贝到更大的内存空间，删除原内存空间数据</p>
+<p>vector容器支持可随机访问的迭代器，类似于数组的访问</p>
+<p>迭代器：<code>vector&lt;T&gt;::iterator</code></p>
+<h3 id="vector构造函数"><a href="#vector构造函数" class="headerlink" title="vector构造函数"></a>vector构造函数</h3><p>函数原型：</p>
+<ul>
+<li><p><code>vector&lt;T&gt; v;</code>//采用模板实现  类实现，默认构造函数</p>
+</li>
+<li><p><code>vector(v.begin(),v.end());</code>//将<strong>v[v.begin(),v.end())区间</strong>中的数据拷贝到本身，无需模板指定数据类型</p>
+<ul>
+<li>这个区间，前闭后开，即前面的数据可以取到，但是后面的数据无法取到，end指向的值是无意义的</li>
+</ul>
+</li>
+<li><p><code>vector(const vector &amp;vec);</code>//拷贝构造函数</p>
+</li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">void printv(vector<int>& v)  //const vector<int>& v
+&#123;
+    for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
+        cout << (*it);
+    cout << endl;
+&#125;
+void test01()
+&#123;
+    vector<int> v1;
+    for (int i = 0; i < 10; i++)
+    &#123;
+        v1.push_back(i);
+    &#125;
+    printv(v1);
+    //vector<int> v2=(v1.begin(), v1.end());
+    vector<int> v2(v1.begin(), v1.end());
+    printv(v2);
+    vector<int> v3(10, 100);  //前一个参数为数量，后一个参数为单个数据
+    printv(v3);
+    vector<int> v4 = v3;
+    printv(v4);
+&#125;
+=>
+    0123456789
+    0123456789
+    100100100100100100100100100100
+    100100100100100100100100100100</code></pre>
+<h3 id="vector赋值操作"><a href="#vector赋值操作" class="headerlink" title="vector赋值操作"></a>vector赋值操作</h3><p>函数原型：</p>
+<ul>
+<li><code>vector&amp; operator=(const vector &amp;vec);</code>//重载等号操作符</li>
+<li><code>assign(beg,end);</code>//将[beg,end）区间中的数据拷贝赋值给本身</li>
+<li><code>assign(n,elem);</code>//将n个elem拷贝赋值给本身</li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">void test02()
+&#123;
+    //vector赋值
+    vector<int> v1;
+    for (int i = 0; i < 10; i++)
+    &#123;
+        v1.push_back(i);
+    &#125;
+    vector<int> v2;
+    v2 = v1;        //no.1
+    printv(v2);
+    vector<int> v3;
+    v3.assign(v1.begin(), v1.end());   //no.2
+    printv(v3);
+    vector<int> v4;
+    v4.assign(2, 829);    //no.3
+    printv(v4);
+&#125;
+=>
+    0123456789
+    0123456789
+    829829</code></pre>
+<h3 id="vector容量和大小"><a href="#vector容量和大小" class="headerlink" title="vector容量和大小"></a>vector容量和大小</h3><p>函数原型：</p>
+<ul>
+<li><code>empty();//判断容器是否为空，为空返回1</code></li>
+<li><code>capacity();//容器的容量</code></li>
+<li><code>size();//返回容器中元素的个数</code></li>
+<li><code>resize(int num);//重新指定容器的大小，如果容器变长，则以默认值填冲新位置，如果变短，末尾超出容器长度的元素被删除</code></li>
+<li><code>resize(int num,elem);//同上，多出的用elem填充</code></li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">void test03()
+&#123;
+    //vector容器的容量和大小
+    vector<int> v;
+    for (int i = 0; i < 10; i++)
+    &#123;
+        v.push_back(i);
+    &#125;
+    if (v.empty())
+    &#123;
+        cout << "v为空";
+    &#125;
+    else
+    &#123;
+        cout << v.capacity() << endl;//容量
+        cout << v.size() << endl;//元素个数
+    &#125;
+    v.resize(15, 10);
+    printv(v);
+    v.resize(5);
+    printv(v);
+&#125;
+=>
+    13
+    10
+    01234567891010101010
+    01234</code></pre>
+<h3 id="vector插入和删除"><a href="#vector插入和删除" class="headerlink" title="vector插入和删除"></a>vector插入和删除</h3><p>函数原型：</p>
+<ul>
+<li><code>push_back(ele);//尾部插入元素ele</code></li>
+<li><code>pop_back();//尾部删除元素</code></li>
+<li><code>insert(const_iterator pos,ele);//迭代器指向位置pos插入元素ele</code></li>
+<li><code>insert(const_iterator pos,int count,ele);//迭代器指向位置插入n个ele元素</code></li>
+<li><code>erase(const_iterator pos);//删除迭代器指向的元素</code></li>
+<li><code>erase(const_iterator start,const_iterator end);//删除迭代器从start到end之间的元素</code></li>
+<li><code>clear();//删除容器中的所有元素</code></li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">void test04()
+&#123;
+    //vector的插入和删除
+    vector<int> v;
+    v.push_back(10);
+    v.push_back(20);
+    v.push_back(30);
+    v.push_back(40);
+    printv(v);
+    v.pop_back();
+    printv(v);
+    //v.insert(2, 30);
+    v.insert(v.begin(), 0);
+    v.insert(v.end(), 3, 50);
+    printv(v);
+    v.erase(v.begin());
+    printv(v);
+    v.clear();
+    printv(v);
+&#125;
+=>
+    10203040
+    102030
+    0102030505050
+    102030505050
+</code></pre>
+<h3 id="vector数据存取"><a href="#vector数据存取" class="headerlink" title="vector数据存取"></a>vector数据存取</h3><p>函数原型：</p>
+<ul>
+<li>at(int idx);//返回索引idx所指的数据</li>
+<li>operator[];//返回索引idx所指的数据</li>
+<li>front();//返回容器中第一个数据元素</li>
+<li>back();//返回容器中最后一个数据元素</li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">void test05()
+&#123;
+    //vector的存取
+    vector<int> v;
+    v.push_back(10);
+    v.push_back(20);
+    v.push_back(30);
+    v.push_back(40);
+    cout<<v.at(1);
+    cout << v[2];
+    cout << v.front();
+    cout << v.back();
+&#125;
+=>
+    20301040</code></pre>
+<h3 id="vector互换容器"><a href="#vector互换容器" class="headerlink" title="vector互换容器"></a><strong><u>vector互换容器</u></strong></h3><h3 id="vector预留空间"><a href="#vector预留空间" class="headerlink" title="vector预留空间"></a><strong><u>vector预留空间</u></strong></h3><h2 id="deque容器"><a href="#deque容器" class="headerlink" title="deque容器"></a>deque容器</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>双端数组，可以对头部进行插入删除操作</p>
+<p><img src="C:\Users\张驰\AppData\Roaming\Typora\typora-user-images\image-20210301143519206.png" alt="image-20210301143519206"></p>
+<p>deque容器的迭代器也是支持随机访问的</p>
+<p>deque容器的迭代器：<code>deque&lt;int&gt;::const_iterator</code></p>
+<p>迭代器访问：</p>
+<pre class=" language-c++"><code class="language-c++">void printd(deque<int>& d)
+&#123;
+    //for(deque<T>::const_iterator it=)
+    for (deque<int>::const_iterator it = d.begin(); it != d.end(); it++)
+        cout << (*it);
+&#125;</code></pre>
+<h3 id="deque构造函数"><a href="#deque构造函数" class="headerlink" title="deque构造函数"></a>deque构造函数</h3><ul>
+<li><code>deque&lt;T&gt;;//默认构造形式</code></li>
+<li><code>deque(beg,end);//构造函数将[beg,end)区间中的元素拷贝到容器中</code></li>
+<li><code>deque(n,elem);//构造函数将n个elem拷贝给本身</code></li>
+<li><code>deque(const deque&amp;deq);//构造拷贝函数</code></li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">void test01()
+&#123;
+    deque<int> d1;
+    d1.push_back(10);
+    d1.push_front(20);
+    deque<int> d2(d1.begin(), d1.end());
+    deque<int> d3(3, 30);
+    deque<int> d4 = d3;
+
+    printd(d1); cout << endl;
+    printd(d2); cout << endl;
+    printd(d3); cout << endl;
+    printd(d4);
+&#125;
+=>
+    2010
+    2010
+    303030
+    303030</code></pre>
+<p>deque容器和vector容器的构造方式几乎一致</p>
+<h3 id="deque赋值操作"><a href="#deque赋值操作" class="headerlink" title="deque赋值操作"></a>deque赋值操作</h3><p>函数原型：</p>
+<ul>
+<li><code>deque&amp; operator=(const deque&amp; deq);</code></li>
+<li><code>deque.assign(beg,end);</code></li>
+<li><code>deque.assign(n,elem);</code></li>
+</ul>
+<h3 id="deque大小操作"><a href="#deque大小操作" class="headerlink" title="deque大小操作"></a>deque大小操作</h3><p>函数原型:</p>
+<ul>
+<li><p><code>deque.empty();</code></p>
+</li>
+<li><p><code>deque.size();</code></p>
+</li>
+<li><p><code>deque.resize(int num);</code></p>
+</li>
+<li><p><code>deque.resize(int num,elem);</code></p>
+</li>
+</ul>
+<p><strong>deque没有容量的概念</strong></p>
+<h3 id="deque插入和删除"><a href="#deque插入和删除" class="headerlink" title="deque插入和删除"></a>deque插入和删除</h3><p>函数原型：</p>
+<ol>
+<li>两端插入操作：</li>
+</ol>
+<ul>
+<li><p><code>push_back();//尾插</code></p>
+</li>
+<li><p><code>pop_back();//尾删</code></p>
+</li>
+<li><p><code>push_front();//头插</code></p>
+</li>
+<li><p><code>pop_front();//头删</code></p>
+</li>
+</ul>
+<ol start="2">
+<li>指定位置操作：</li>
+</ol>
+<ul>
+<li><code>insert(pos,elem);//在pos位置插入elem的拷贝，返回该数据的位置</code></li>
+<li><code>insert(pos,n,elem);//在pos位置插入n个elem数据，无返回值</code></li>
+<li><code>insert(pos,begin,end);//在pos位置插入区间[beg,end)中的数据，无返回值</code></li>
+<li><code>clear();//清空容器中的数据</code></li>
+<li><code>erase(pos);//删除pos位置的数据，返回下一个数据的位置</code></li>
+<li><code>erase(begin,end);//删除[begin,end)区间中的数据,返回下一个数据的位置</code></li>
+</ul>
+<p><strong>插入和删除提供的位置不是元素序号或者下标，而是迭代器位置</strong></p>
+<h3 id="deque数据存取"><a href="#deque数据存取" class="headerlink" title="deque数据存取"></a>deque数据存取</h3><p>函数原型：</p>
+<ul>
+<li><code>at(int idx);//返回索引idx所指的数据</code></li>
+<li><code>operator[];//返回索引idx所指的数据</code></li>
+<li><code>front();//返回容器第一个数据</code></li>
+<li><code>back();//返回容器最后一个数据</code></li>
+</ul>
+<h3 id="deque排序"><a href="#deque排序" class="headerlink" title="deque排序"></a>deque排序</h3><p>利用算法对deque容器进行排序，类似于vector容器中常用的算法<code>for_each(begin,end,func);</code></p>
+<p>deque容器排序算法：</p>
+<p><code>sort(iterator begin,iterator end);//对beg和end区间内元素进行排序</code></p>
+<pre class=" language-c++"><code class="language-c++">#include<algorithm>
+void test02()
+&#123;
+    deque<int> d;
+    d.push_back(10);
+    d.push_front(20);
+    d.push_front(30);
+    d.push_back(40);
+    printd(d); cout << endl;
+    sort(d.begin(), d.end());
+    printd(d);
+&#125;
+//sort从小到大排序
+=>
+    30201040
+    10203040</code></pre>
+<h2 id="stack容器"><a href="#stack容器" class="headerlink" title="stack容器"></a>stack容器</h2><h3 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h3><p>stack是体现栈的容器，先进后出，只能访问栈顶元素</p>
+<p>即只有顶端元素才可以被外界使用，因此栈不允许有遍历行为</p>
+<p>栈中进入数据push</p>
+<p>栈中弹出数据pop</p>
+<h3 id="常用接口"><a href="#常用接口" class="headerlink" title="常用接口"></a>常用接口</h3><p>构造函数：</p>
+<ul>
+<li><code>stack&lt;T&gt; stk;//默认构造函数</code></li>
+<li><code>stack(const stack &amp;stk);//拷贝构造函数</code></li>
+</ul>
+<p>赋值操作：</p>
+<ul>
+<li><code>stack&amp; operator=(const stack &amp;stk);//重载等号操作符</code></li>
+</ul>
+<p>数据存取：</p>
+<ul>
+<li><code>push(elem);//从栈顶添加元素</code></li>
+<li><code>pop();//从栈顶移除第一个元素</code></li>
+<li><code>top();//返回栈顶元素</code></li>
+</ul>
+<p>大小操作：</p>
+<ul>
+<li><code>empty();//判空，栈空为1</code></li>
+<li><code>size();//返回栈的大小</code></li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">void test01()
+&#123;
+    stack<int> s;
+    s.push(10);
+    s.push(20);
+    s.push(30);
+    s.pop();
+    cout << s.top() << endl;
+    stack<int> s2;
+    s2 = s;
+    cout << s.top();
+&#125;</code></pre>
+<h2 id="queue容器"><a href="#queue容器" class="headerlink" title="queue容器"></a>queue容器</h2><h3 id="基本概念-2"><a href="#基本概念-2" class="headerlink" title="基本概念"></a>基本概念</h3><p>即表示队列的数据结构，先进先出，有两个出口</p>
+<p>允许从一端新增元素，从一端移除元素</p>
+<p>只允许访问对头和队尾，因此不支持遍历整个队列</p>
+<h3 id="常用接口-1"><a href="#常用接口-1" class="headerlink" title="常用接口"></a>常用接口</h3><p>构造函数：</p>
+<ul>
+<li><code>queue&lt;T&gt;que;//queue采用模板类实现，queue对象的默认构造函数</code></li>
+<li><code>queue(const queue &amp;que);//拷贝构造函数</code></li>
+</ul>
+<p>赋值操作：</p>
+<ul>
+<li><code>queue&amp; operator=(const queue &amp;que);//重载等号操作符</code></li>
+</ul>
+<p>数据存取：</p>
+<p>队尾进，队头出</p>
+<ul>
+<li><code>push(elem);//在队尾添加数据</code></li>
+<li><code>pop();//在队头移除数据</code></li>
+<li><code>back();//返回队尾元素</code></li>
+<li><code>front();//返回队头元素</code></li>
+</ul>
+<p>大小操作：</p>
+<ul>
+<li><code>empty();//判空</code></li>
+<li><code>size();//返回栈的大小</code></li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">void test01()
+&#123;
+    queue<int> q;
+    q.push(10);        //10 
+    q.push(20);        //20 10
+    q.push(30);        //30 20 10
+    q.push(40);        //40 30 20 10
+    if (!q.empty())
+    &#123;
+        q.pop();    //40 30 20
+    &#125;
+    cout << q.back() << endl;
+    cout << q.front() << endl;
+    queue<int> q2;
+    q2 = q;
+    cout << q2.size();
+&#125;
+=> 
+    40
+    20
+    3</code></pre>
+<h2 id="List容器"><a href="#List容器" class="headerlink" title="List容器"></a>List容器</h2><h3 id="基本概念-3"><a href="#基本概念-3" class="headerlink" title="基本概念"></a>基本概念</h3><p>list即表示链表的数据结构</p>
+<p>是一种物理存储上非连续的存储结构，数据元素的逻辑关系通过指针链接来实现</p>
+<p>链表由一系列结点组成</p>
+<p>结点包括储存元素的数据域和存储指向下一个结点的指针(<strong>下一个结点的地址</strong>)</p>
+<p>数据中，结点由结构体创建</p>
+<p><strong>STL中的链表是一个双向循环链表</strong></p>
+<p>List的存储空间并不是连续的物理存储空间，因此List的迭代器只支持前移和后移，是双向迭代器</p>
+<p><u>List有一个重要的性质，插入操作和删除操作都不会造成原有list迭代器的失效，这在vector是不成立的</u></p>
+<p><img src="C:\Users\张驰\AppData\Roaming\Typora\typora-user-images\image-20210301204815294.png" alt="image-20210301204815294"></p>
+<h3 id="list构造函数"><a href="#list构造函数" class="headerlink" title="list构造函数"></a>list构造函数</h3><p>函数原型：</p>
+<ul>
+<li>list<T> lst;//list采用模板类实现，对象的默认构造形式</li>
+<li>list(beg,end);//将[beg,end)区间内的元素拷贝到容器中</li>
+<li>list(n,elem);//构造函数将n个elem拷贝到容器中</li>
+<li>list(const list &amp;lst);//拷贝构造函数</li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">void test01()
+&#123;
+    list<int> lst1;
+    lst1.push_back(20);
+    lst1.push_back(30);
+    lst1.push_front(10);
+    printl(lst1);
+    list<int> lst2(lst1.begin(), lst1.end());
+    printl(lst2);
+    list<int> lst3(2, 829);
+    printl(lst3);
+    list<int>lst4;
+    lst4 = lst3;
+    printl(lst3);
+&#125;
+=>
+    102030
+    102030
+    829829
+    829829</code></pre>
+<h3 id="list赋值和交换"><a href="#list赋值和交换" class="headerlink" title="list赋值和交换"></a>list赋值和交换</h3><p>函数原型：</p>
+<ul>
+<li><code>assign(beg,end);</code></li>
+<li><code>assign(n,elem);</code></li>
+<li><code>list&amp; operator=(const list &amp;lst);</code></li>
+<li><code>swap(lst);//将lst与本身的元素互换</code></li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">//交换
+void test02()
+&#123;
+    list<int> lst1;
+    lst1.push_back(20);
+    lst1.push_back(30);
+    lst1.push_front(10);
+    list<int> lst2(2, 829);
+    cout << "交换前：" << endl;
+    printl(lst1); 
+    printl(lst2); 
+
+    lst1.swap(lst2);
+
+    cout << "交换后：" << endl;
+    printl(lst1);
+    printl(lst2); 
+&#125;
+=>
+    交换前：
+    102030
+    829829
+    交换后：
+    829829
+    102030</code></pre>
+<h3 id="list大小操作"><a href="#list大小操作" class="headerlink" title="list大小操作"></a>list大小操作</h3><p>函数原型：</p>
+<ul>
+<li><code>size();//返回容器中元素个数</code></li>
+<li><code>empty();//判断容器是否为空</code></li>
+<li><code>resize(num);</code></li>
+<li><code>resize(num,elem);</code></li>
+</ul>
+<h3 id="list插入和删除"><a href="#list插入和删除" class="headerlink" title="list插入和删除"></a>list插入和删除</h3><p>函数原型：</p>
+<ul>
+<li><code>push_back(elem);//在容器尾部添加一个元素</code></li>
+<li><code>pop_back();//删除容器尾部的一个元素</code></li>
+<li><code>push_front(elem);//在容器开头添加一个元素</code></li>
+<li><code>pop_front();//删除容器开头的一个元素</code></li>
+<li><code>insert(pos,elem);//在pos位置**插入elem元素的拷贝**，返回新数据的位置</code></li>
+<li><code>insert(pos,beg,end);//在pos位置插入区间[beg,end)内的数据，无返回值</code></li>
+<li><code>clear();//清除容器中所有元素</code></li>
+<li><code>erase(pos);//删除pos位置的元素，返回下一个元素的位置</code></li>
+<li><code>erase(beg,end);//删除[beg,end)区间中的元素，返回下一个元素的位置</code></li>
+<li><code>**remove(elem);//移除容器中和elem值匹配的元素**</code></li>
+</ul>
+<h3 id="list数据存取"><a href="#list数据存取" class="headerlink" title="list数据存取"></a>list数据存取</h3><p>list不支持at访问和[]访问</p>
+<p>因为list的迭代器是双向迭代器，不支持随机访问</p>
+<p>函数原型：</p>
+<ul>
+<li>front();//返回第一个元素</li>
+<li>back();//返回最后一个元素</li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">//list容器的迭代器是双向迭代器，不支持随机访问
+list<int>::iterator it =L1.begin();
+//it=it+1;//错误，不可以跳跃访问，即使是+1</code></pre>
+<h3 id="list反转和排序"><a href="#list反转和排序" class="headerlink" title="list反转和排序"></a>list反转和排序</h3><p>将容器中的元素反转，将容器中的数据排序</p>
+<p>函数原型：</p>
+<ul>
+<li><code>reverse();//反转链表</code></li>
+<li><code>sort();//链表排序</code></li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">bool myCompare(int val1,int val2)
+&#123;
+    return val1 > val2;
+&#125;
+void test03()
+&#123;
+    list<int> lst1;
+    lst1.push_back(20);
+    lst1.push_back(30);
+    lst1.push_front(10);
+    //sort(lst1.begin(),lst1.end());
+    //无法使用这种随机迭代器访问的方式访问list
+    lst1.sort();
+    printl(lst1);
+    lst1.sort(myCompare);
+    printl(lst1);
+&#125;
+//默认排序方式是从小到大
+//对于自定义数据类型，必须要指定排序规则
+
+=>
+    102030
+    302010</code></pre>
+<pre class=" language-c++"><code class="language-c++">bool compare(Person& p1, Person& p2)
+&#123;
+    if (p1.m_age == p2.m_age)
+        return p1.m_height > p2.m_height;
+    else
+        return p1.m_age < p2.m_age;
+&#125;
+//高级排序只是在排序规则上再进行一次逻辑规则制定</code></pre>
 
                 
             </div>
@@ -515,7 +1016,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://1doctorc1.github.io/2021/01/11/hello-world/">https://1doctorc1.github.io/2021/01/11/hello-world/</a>
+                    <a href="https://1doctorc1.github.io/2021/03/04/stl-chang-yong-rong-qi-2/">https://1doctorc1.github.io/2021/03/04/stl-chang-yong-rong-qi-2/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -552,7 +1053,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -724,13 +1229,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/01/31/c-qi-mo-fu-xi/">
+                <a href="/2021/03/04/stl-chang-yong-rong-qi-3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="C++期末复习">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="STL常用容器3">
                         
-                        <span class="card-title">C++期末复习</span>
+                        <span class="card-title">STL常用容器3</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -741,8 +1246,45 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-31
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-04
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            1doctorc1
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/03/04/stl-yu-rong-qi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="STL与容器">
+                        
+                        <span class="card-title">STL与容器</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -754,49 +1296,11 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
                 </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/01/11/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-11
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            1doctorc1
-                            
-                        </span>
-                    </div>
-                </div>
-
                 
             </div>
         </div>

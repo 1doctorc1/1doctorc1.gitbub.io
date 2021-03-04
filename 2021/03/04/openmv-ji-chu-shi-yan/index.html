@@ -1,0 +1,1584 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="openmv基础实验, Hexo">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>openmv基础实验 | Hexo</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Hexo</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Hexo</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">openmv基础实验</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/">
+                                <span class="chip bg-color">图像识别</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-03-04
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.7k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    11 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="openmv基础实验"><a href="#openmv基础实验" class="headerlink" title="openmv基础实验"></a>openmv基础实验</h1><h3 id="感悟："><a href="#感悟：" class="headerlink" title="感悟："></a>感悟：</h3><p>学会构造函数和使用方法，完成对相关对象的操作</p>
+<p>功能增加就是各类函数的叠加</p>
+<p>除了普通的按键输入和电平检测外，很大一部分输入设备，比如传感器也是通过外部中断方式来实时检测</p>
+<p>I2C学习：使用单片机从0开发需要了解I2C总线原理，了解OLED显示屏的使用手册，编程I2C代码</p>
+<h3 id="历程测试"><a href="#历程测试" class="headerlink" title="历程测试"></a>历程测试</h3><p>通过mircousb数据线将mircopython开发板连接到电脑</p>
+<p>正常操作将会在电脑发现一个U盘</p>
+<p>主要文件介绍：</p>
+<p>main.py： 主函数代码文件，上电后首先执行</p>
+<p>另外系统会自动安装usb转串口驱动，“我的电脑”—“属性”—“设备管理器”—“端口(com和LPT)”查看是否有openMV(cam usb com port)</p>
+<h3 id="点亮led"><a href="#点亮led" class="headerlink" title="点亮led"></a>点亮led</h3><p>通过mircopython对象编程控制，控制led使用到led对象，主要学习led的构造函数和使用方法</p>
+<p>led对象：</p>
+<ul>
+<li>构造函数：pyb.LED(id)    # led对象在pyb模块下</li>
+<li>使用方法：<ul>
+<li>LED.on()      #点亮LED，输出“低”电平？</li>
+<li>LED.off()     #关闭LED，输出“高”电平</li>
+<li>LED.toggle()  #LED亮灭状态翻转，输出电平翻转</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> pyb <span class="token keyword">import</span> LED    <span class="token comment" spellcheck="true">#导入模块</span>
+LED<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span>on<span class="token punctuation">(</span><span class="token punctuation">)</span>        <span class="token comment" spellcheck="true">#令LED3(蓝)亮</span></code></pre>
+<p>需要加载到openmv4文件系统，无法在openmvIDE中运行，因为无while True()死循环</p>
+<h3 id="流水灯"><a href="#流水灯" class="headerlink" title="流水灯"></a>流水灯</h3><p>要实现固定时间来亮灭，需要用到utime模块中的延时函数</p>
+<p>utime时间对象：</p>
+<ul>
+<li>utime()   #时间模块</li>
+<li>使用方法：<ul>
+<li>utime.sleep_ms(ms)   # 毫秒级延时</li>
+<li>utime.sleep_us(us)   #微妙级延时</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> pyb <span class="token keyword">import</span> LED
+<span class="token keyword">import</span> utime
+<span class="token comment" spellcheck="true">#关闭全部LED</span>
+LED<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>off<span class="token punctuation">(</span><span class="token punctuation">)</span>
+LED<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span>off<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#while True 表示一直循环</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true">#LED2亮1秒</span>
+    LED<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>on<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    utime<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    LED<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>off<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#LED3亮1秒</span>
+    LED<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span>on<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    utime<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    LED<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span>off<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true">#for形式实现上述功能</span>
+<span class="token keyword">from</span> pyb <span class="token keyword">import</span> LED
+<span class="token keyword">import</span> utime
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    LED<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">.</span>off<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        LED<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">.</span>on<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        utime<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        LED<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">.</span>off<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<h3 id="GPIO-按键"><a href="#GPIO-按键" class="headerlink" title="GPIO(按键)"></a>GPIO(按键)</h3><p>General  Purpose Input/Output</p>
+<p>GPIO(Pin对象)的构造函数和使用方法：</p>
+<ul>
+<li>构造函数：<ul>
+<li>pyb.Pin(id,mode,pull_mode)</li>
+<li>Pin对象在pyb模块下</li>
+<li>【id】引脚号，P0，P1</li>
+<li>【mode】输入输出模式选择    Pin.IN输入模式，Pin.OUT_PP输出带推挽</li>
+<li>【pull_mode】上下拉电阻配置     Pin.PULL_UP上拉电阻    Pin.PULL_DOWN下拉电阻   Pin.PULL_NONE没上下拉电阻</li>
+<li>例：KEY=Pin(“P9”,Pin.IN,Pin.PULL_UP)   #将按键P9配置为输入方式</li>
+</ul>
+</li>
+<li>使用方法：<ul>
+<li>Pin.high()   引脚输出高电平</li>
+<li>Pin.low()   引脚输出低电平</li>
+<li>Pin.value()  获取当前引脚的输入电平，返回0(低电平)或者1(高电平)</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> pyb <span class="token keyword">import</span> LED<span class="token punctuation">,</span>Pin
+<span class="token comment" spellcheck="true">#配置KEY</span>
+KEY<span class="token operator">=</span>Pin<span class="token punctuation">(</span><span class="token string">"P9"</span><span class="token punctuation">,</span>Pin<span class="token punctuation">.</span>IN<span class="token punctuation">,</span>Pin<span class="token punctuation">.</span>PULL_UP<span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">if</span> KEY<span class="token punctuation">.</span>value<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span> <span class="token punctuation">:</span>
+        LED<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>on<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        LED<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>off<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<h3 id="外部中断"><a href="#外部中断" class="headerlink" title="外部中断"></a>外部中断</h3><p>上述代码会使GPIO口一直检测IO的输入口变化</p>
+<p>外部中断要实现：当按键被按下(产生中断)时，我们才去执行相关功能</p>
+<p>外部中断对象：</p>
+<ul>
+<li>构造函数:<ul>
+<li>pyb.ExtInt(pin,mode,pull_mode,callback)</li>
+<li>【pin】引脚号</li>
+<li>【mode】中断触发方式   Extlnt.IRQ_RISING:上升沿触发    Extlnt.IRQ_FALLING:下降沿触发   Extlnt.IRQ_RISING_FALLING: 上升或下降沿触发</li>
+<li>【pull_mode】上下拉电阻设置，同Pin对象构造函数</li>
+<li>【callback】中断后执行的回调函数</li>
+</ul>
+</li>
+</ul>
+<p>上升沿和下降沿：</p>
+<p><img src="C:\Users\张驰\AppData\Roaming\Typora\typora-user-images\image-20210205110519548.png" alt="image-20210205110519548"></p>
+<p>当按键被按下再松开时，引脚先获得下降沿再获得上升沿</p>
+<p>因此可以选择下降沿方式触发外部中断</p>
+<p>实验目的：利用中断方式检查按键KEY状态，按键被按下(产生外部中断)后使LED(2)蓝灯的亮灭状态发转</p>
+<ol>
+<li>导入模块</li>
+<li>配置中断方式和定义回调函数</li>
+<li>产生外部中断的时候自动执行回调函数</li>
+</ol>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> pyb <span class="token keyword">import</span> LED<span class="token punctuation">,</span>Pin<span class="token punctuation">,</span>ExtInt
+
+callback<span class="token operator">=</span><span class="token keyword">lambda</span> e<span class="token punctuation">:</span>LED<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span>toggle<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#下降沿触发，拉开上拉电阻</span>
+ext<span class="token operator">=</span>ExtInt<span class="token punctuation">(</span>Pin<span class="token punctuation">(</span><span class="token string">'P9'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>ExtInt<span class="token punctuation">.</span>IRQ_FALLING<span class="token punctuation">,</span>Pin<span class="token punctuation">.</span>PULL_UP<span class="token punctuation">,</span>callback<span class="token punctuation">)</span></code></pre>
+<h3 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h3><p>通过定时器可以完成各种预设好的任务</p>
+<p>实验通过定时器让LED(3)蓝灯周期性每秒闪烁1次</p>
+<p>定时器对象：</p>
+<ul>
+<li>构造函数：<ul>
+<li>pyb.Timer(id,freq,……)</li>
+<li>定时器对象Timer对象在pyb模块下</li>
+<li>【id】定时器编号，1–14</li>
+<li>【freq】定时器中断频率</li>
+</ul>
+</li>
+<li>Timer.callback(fun)    定义执行的回调函数</li>
+<li>Timer.deinit()   终止定时器</li>
+</ul>
+<ol>
+<li>导入模块</li>
+<li>定义回调函数和配置定时器中断方式</li>
+<li>当定时器产生中断时候自动执行回调函数</li>
+</ol>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> pyb <span class="token keyword">import</span> Timer<span class="token punctuation">,</span>LED
+
+timer<span class="token operator">=</span>Timer<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span>freq<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#使用定时器4创建定时器对象，频率1HZ</span>
+<span class="token comment" spellcheck="true">#定时器中断回调函数，执行LED(3)蓝灯状态反转</span>
+timer<span class="token punctuation">.</span>callback<span class="token punctuation">(</span><span class="token keyword">lambda</span> t<span class="token punctuation">:</span>LED<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span>toggle<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h3 id="I2C总线-OLED屏"><a href="#I2C总线-OLED屏" class="headerlink" title="I2C总线(OLED屏)"></a>I2C总线(OLED屏)</h3><p>输出设备OLED</p>
+<p>pyAI-Openmv4是通过I2C总线与OLED显示屏通讯的</p>
+<p>I2C是不同通讯设备之间的通讯协议，在物理层面分为两条线，SCL和SDA，即时钟线和数据线</p>
+<p>OLED与py板的连接：Y6–SCL，Y8–SDA</p>
+<p>openmv4与py板的连接：Y6–P2，Y8–P0</p>
+<p>即Openmv4与OLED的对应连接关系是： P0–SDA，P2–SCL</p>
+<p>I2C对象： </p>
+<ul>
+<li>构造函数：i2c=machine.I2C(scl,sda,freq)     构造I2C对象<ul>
+<li>【scl】时钟引脚</li>
+<li>【sda】数据引脚</li>
+<li>【freq】通信频率，即速度</li>
+</ul>
+</li>
+<li>使用方法<ul>
+<li>i2c.scan()  扫描I2C总线的设备，返回地址</li>
+<li>i2c.readfrom(addr,nbytes)  从指定地址读数据  addr：指定设备地址，nbytes：读取字节数</li>
+<li>i2c.write(buf)   写数据  buf:数据内容</li>
+</ul>
+</li>
+</ul>
+<p>OLED对象：</p>
+<ul>
+<li>构造函数：oled=SSD1306_I2C(width,height,i2c,addr)<ul>
+<li>构造OLED显示屏对象</li>
+<li>【width】屏幕宽像素</li>
+<li>【height】屏幕高像素</li>
+<li>【i2c】定义好的I2c对象</li>
+<li>【addr】显示屏设备地址</li>
+</ul>
+</li>
+<li>使用方法：<ul>
+<li>oled.text(string,x,y)   将string字符写在指定位置，string：字符；x：横坐标，y：纵坐标</li>
+<li>oled.show()  执行显示</li>
+<li>oled.fill(RGB)  清屏，RGB：0表示黑色，1表示白色</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#导入Pin，I2C，OLED模块</span>
+<span class="token keyword">from</span> pyb <span class="token keyword">import</span> Pin
+<span class="token keyword">from</span> ssd1306<span class="token punctuation">.</span>py <span class="token keyword">import</span> OLED
+<span class="token keyword">from</span> machine <span class="token keyword">import</span> I2C
+<span class="token comment" spellcheck="true">#初始化I2C和OLED</span>
+i2c<span class="token operator">=</span>machine<span class="token punctuation">.</span>I2C<span class="token punctuation">(</span><span class="token string">"P2"</span><span class="token punctuation">,</span><span class="token string">"P0"</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span>
+oled<span class="token operator">=</span>SSD1306_I2C<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span>i2c<span class="token punctuation">,</span>i2c<span class="token punctuation">.</span>scan<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#输入需要显示的字符</span>
+oled<span class="token punctuation">.</span>text<span class="token punctuation">(</span><span class="token string">"hello world"</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#执行OLED显示函数</span>
+oled<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">from</span> machine <span class="token keyword">import</span> I2C<span class="token punctuation">,</span>Pin      <span class="token comment" spellcheck="true">#从machine模块导入I2C，Pin子模块</span>
+<span class="token keyword">from</span> ssd1306 <span class="token keyword">import</span> SSD1306_I2C  <span class="token comment" spellcheck="true">#从ssd1306模块中导入SSD1306_I2C子模块</span>
+
+<span class="token comment" spellcheck="true">#I2C初始化</span>
+i2c<span class="token operator">=</span>I2C<span class="token punctuation">(</span>sda<span class="token operator">=</span>Pin<span class="token punctuation">(</span><span class="token string">"P0"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>scl<span class="token operator">=</span>Pin<span class="token punctuation">(</span><span class="token string">"P2"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>freq<span class="token operator">==</span><span class="token number">80000</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#OLED显示屏初始化：128*64分辨率，OLED的I2C地址是0x3c</span>
+oled<span class="token operator">=</span>SSD1306_I2C<span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">,</span><span class="token number">64</span><span class="token punctuation">,</span>i2c<span class="token punctuation">,</span>addr<span class="token operator">=</span><span class="token number">0x3c</span><span class="token punctuation">)</span>
+
+oled<span class="token punctuation">.</span>text<span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#写入第1行内容</span>
+oled<span class="token punctuation">.</span>text<span class="token punctuation">(</span><span class="token string">"MircoPython"</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#写入第2行内容</span>
+oled<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#oled执行显示</span></code></pre>
+<h3 id="RTC实时时钟"><a href="#RTC实时时钟" class="headerlink" title="RTC实时时钟"></a>RTC实时时钟</h3><p>学习RTC编程并制作电子时钟(读取RTC数据)，使用OLED显示</p>
+<p>pyboard集成了内置时钟函数模块</p>
+<p>RTC实时时钟对象：</p>
+<ul>
+<li>构造函数：pyb.RTC()  RTC()是内置的实时时钟函数模块</li>
+<li>使用方法：RTC().datetime(2019,4,1,1,0,0,0,0)<ul>
+<li>设置日期时间：顺序分别是年，月，日，星期，时，分，秒，次秒级</li>
+<li>星期：1-7表示周一到周日</li>
+<li>次秒级：255–0倒着计数</li>
+<li>RTC().datetime()   获取当前日期时间数据</li>
+</ul>
+</li>
+</ul>
+<p>先设定时间，然后获取当前芯片里的时间，通过OLED显示屏显示，如此循环</p>
+<p>每隔一段时间获取一次数据，可以每隔300ms获取一次数据</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#导入RTC，OLED模块</span>
+<span class="token keyword">from</span> pyb <span class="token keyword">import</span> RTC
+<span class="token keyword">from</span> ssd1306 <span class="token keyword">import</span> SSD1306_I2C
+<span class="token comment" spellcheck="true">#初始化RTC和OLED</span>
+oled<span class="token operator">=</span>SSD1306_I2C<span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">,</span><span class="token number">64</span><span class="token punctuation">,</span>i2c<span class="token punctuation">,</span>addr<span class="token operator">=</span><span class="token number">0x3c</span><span class="token punctuation">)</span>
+rtc<span class="token operator">=</span>RTC<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2021</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">255</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    trc<span class="token operator">=</span>RTC<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>datatime<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    oled<span class="token punctuation">.</span>text<span class="token punctuation">(</span>rtc<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+    oled<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    utime<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#导入相关模块</span>
+<span class="token keyword">from</span> pyb <span class="token keyword">import</span> RTC
+<span class="token keyword">from</span> machine <span class="token keyword">import</span> Pin<span class="token punctuation">,</span>I2C
+<span class="token keyword">from</span> ssd1306 <span class="token keyword">import</span> SSD13066_I2C
+<span class="token keyword">import</span> utime
+<span class="token comment" spellcheck="true">#定义星期和时间(时分秒)显示字符列表</span>
+week<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'Mon'</span><span class="token punctuation">,</span><span class="token string">'Tues'</span><span class="token punctuation">,</span><span class="token string">'Wed'</span><span class="token punctuation">,</span><span class="token string">'Thur'</span><span class="token punctuation">,</span><span class="token string">'Fri'</span><span class="token punctuation">,</span><span class="token string">'Sat'</span><span class="token punctuation">,</span><span class="token string">'Sun'</span><span class="token punctuation">]</span>
+time<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">''</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#初始化所有相关对象</span>
+i2c<span class="token operator">=</span>I2C<span class="token punctuation">(</span>sda<span class="token operator">=</span>Pin<span class="token punctuation">(</span><span class="token string">'P0'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>scl<span class="token operator">=</span>Pin<span class="token punctuation">(</span><span class="token string">"P2"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>freq<span class="token operator">=</span><span class="token number">80000</span><span class="token punctuation">)</span>
+oled<span class="token operator">=</span>SSD1306_I2C<span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">,</span><span class="token number">64</span><span class="token punctuation">,</span>i2c<span class="token punctuation">,</span>addr<span class="token operator">=</span><span class="token number">0x3c</span><span class="token punctuation">)</span>
+rtc<span class="token operator">=</span>RTC<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#设置初始时间</span>
+rtc<span class="token punctuation">.</span>datatime<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2021</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    datetime<span class="token operator">=</span>rtc<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#获取当前时间</span>
+    oled<span class="token punctuation">.</span>fill<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#清屏显示黑色背景</span>
+    <span class="token comment" spellcheck="true">#显示日期，字符串使用“+”连接</span>
+    oled<span class="token punctuation">.</span>text<span class="token punctuation">(</span>str<span class="token punctuation">(</span>datetime<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"-"</span><span class="token operator">+</span>str<span class="token punctuation">(</span>datetime<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"-"</span><span class="token operator">+</span>str<span class="token punctuation">(</span>datetime<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">" "</span><span class="token operator">+</span><span class="token string">" "</span>week<span class="token punctuation">[</span><span class="token punctuation">(</span>datetime<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#显示时间</span>
+
+    oled<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    utime<span class="token punctuation">.</span>sleep_ms<span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span></code></pre>
+<h3 id="ADC"><a href="#ADC" class="headerlink" title="ADC"></a>ADC</h3><p>analog  to  digital  conversion  模拟数字转换</p>
+<p>将模拟信号转化成数字信号</p>
+<p>应用：将外界模拟信号通过ADC转换成单片机可以识别的数字信息</p>
+<p>将变化的电压转成数字信号</p>
+<p>实验目的：调用mircopython内置的ADC函数，实现测量0-3.3V电压，并显示到OLED屏幕上</p>
+<p>openmv的P6引脚连接到pyboard的X6上，通过跳线帽连接X6和X7，pyboard上的X7用于调节电压</p>
+<p>ADC对象：</p>
+<ul>
+<li>构造函数：<ul>
+<li>pyb.ADC(Pin)  ADC对象在pyb模块下，Pin:ADC输入引脚</li>
+</ul>
+</li>
+<li>使用方法：<ul>
+<li>ADC.read()</li>
+<li>读取AD值，返回0–4095(0V–3.3V),自带ADC的测量精度是12位，2^12=4096</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> pyb <span class="token keyword">import</span> ADC<span class="token punctuation">,</span>Pin
+<span class="token keyword">from</span> machine <span class="token keyword">import</span> I2C
+<span class="token keyword">from</span> ssd1306x <span class="token keyword">import</span> SSD1306_I2C
+<span class="token keyword">import</span> utime
+<span class="token comment" spellcheck="true">#初始化ADC和OLED</span>
+adc<span class="token operator">=</span>ADC<span class="token punctuation">(</span><span class="token string">"P"</span><span class="token punctuation">)</span>
+i2c<span class="token operator">=</span>machine<span class="token punctuation">.</span>I2C<span class="token punctuation">(</span>scl<span class="token operator">=</span>Pin<span class="token punctuation">(</span><span class="token string">"P2"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>sda<span class="token operator">=</span>Pin<span class="token punctuation">(</span><span class="token string">"P0"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>freq<span class="token operator">=</span><span class="token number">80000</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#!!!!</span>
+oled<span class="token operator">=</span>SSD1306_I2C<span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">,</span><span class="token number">64</span><span class="token punctuation">,</span>i2c<span class="token punctuation">,</span>ox3c<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#获取ADC的值</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>          <span class="token comment" spellcheck="true">#!!!!</span>
+    vcc<span class="token operator">=</span>adc<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">1240</span>
+    oled<span class="token punctuation">.</span>text<span class="token punctuation">(</span>str<span class="token punctuation">(</span>vcc<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+    utime<span class="token punctuation">.</span>sleep_ms<span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true">#导入相关模块</span>
+<span class="token keyword">import</span> pyb<span class="token punctuation">,</span>utime
+<span class="token keyword">from</span> machine <span class="token keyword">import</span> Pin<span class="token punctuation">,</span>I2C
+<span class="token keyword">from</span> ssd1306x <span class="token keyword">import</span> SSD1306_I2C
+<span class="token comment" spellcheck="true">#初始化相关模块</span>
+i2c<span class="token operator">=</span>I2C<span class="token punctuation">(</span>sda<span class="token operator">=</span>Pin<span class="token punctuation">(</span><span class="token string">"P0"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>scl<span class="token operator">=</span>Pin<span class="token punctuation">(</span><span class="token string">"P2"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>freq<span class="token operator">=</span><span class="token number">80000</span><span class="token punctuation">)</span>
+oled<span class="token operator">=</span>SSD1306_I2C<span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">,</span><span class="token number">64</span><span class="token punctuation">,</span>i2c<span class="token punctuation">,</span>addr<span class="token operator">=</span><span class="token number">0x3c</span><span class="token punctuation">)</span>
+adc<span class="token operator">=</span>pyb<span class="token punctuation">.</span>ADC<span class="token punctuation">(</span><span class="token string">"P6"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    oled<span class="token punctuation">.</span>fill<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#每次使用前都要清屏，以显示黑色背景</span>
+    oled<span class="token punctuation">.</span>text<span class="token punctuation">(</span>str<span class="token punctuation">(</span>adc<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token punctuation">)</span>
+    oled<span class="token punctuation">.</span>text<span class="token punctuation">(</span><span class="token string">'(4095)'</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token punctuation">)</span>
+    oled<span class="token punctuation">.</span>text<span class="token punctuation">(</span>str<span class="token punctuation">(</span><span class="token string">'%.2f'</span><span class="token operator">%</span><span class="token punctuation">(</span>adc<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">4095</span><span class="token operator">*</span><span class="token number">3.3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">)</span>
+    oled<span class="token punctuation">.</span>text<span class="token punctuation">(</span><span class="token string">'V'</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token punctuation">,</span><span class="token number">55</span><span class="token punctuation">)</span>
+
+    oled<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    utime<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></code></pre>
+<h3 id="DAC"><a href="#DAC" class="headerlink" title="DAC"></a>DAC</h3><p>digital  to  analog  converter数字模拟转化器</p>
+<p>将特定的数字信号通过DAC输出，输出的形式多种，特定电压，信号波形</p>
+<p>实验目的：通过DAC输出不同频率的方波来驱动蜂鸣器</p>
+<p>pybase开发板X5引脚连接无源蜂鸣器</p>
+<p>openmv4的DAC引脚P6连接到pybase开发板的X6引脚</p>
+<p>用跳线帽连接pybase开发板的X5和X6引脚</p>
+<p>DAC对象：</p>
+<ul>
+<li>构造函数：<ul>
+<li>pyb.DAC(port,bits=8)    DAC对象在pyb模块下</li>
+<li>【port】对应“P6”</li>
+<li>【bits】8或者12</li>
+</ul>
+</li>
+<li>使用方法：<ul>
+<li>DAC.noise(freq)  产生特定频率的噪声信号</li>
+<li>DAC.triangel(freq)  产生特定频率的三角波信号</li>
+<li>DAC.write(value)   输出特定电压(0–VCC)    【value】范围：0–2^bits-1(例如8bits那么范围就是0–255)</li>
+<li>DAC.write_timed(data,freq,mode)【data】字节数组  【freq】频率输出   【mode】模式：DAC.NORMAL单次模式，DAC.CIRCULAR循环模式</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#导入ADC，KEY，OLED模块</span>
+<span class="token keyword">from</span> pyb <span class="token keyword">import</span> Pin<span class="token punctuation">,</span>ADC
+<span class="token keyword">from</span> ssd1306x <span class="token keyword">import</span> SSD1306_I2C
+<span class="token keyword">from</span> machine <span class="token keyword">import</span> I2C
+<span class="token comment" spellcheck="true">#初始化相关模块</span>
+key<span class="token operator">=</span>Pin<span class="token punctuation">(</span><span class="token string">"P6"</span><span class="token punctuation">,</span>Pin<span class="token punctuation">.</span>IN<span class="token punctuation">.</span>Pin<span class="token punctuation">.</span>PULL_UP<span class="token punctuation">)</span>
+dac<span class="token operator">=</span>DAC<span class="token punctuation">(</span><span class="token string">"P6"</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span>
+i2c<span class="token operator">=</span>machine<span class="token punctuation">.</span>I2C<span class="token punctuation">(</span>scl<span class="token operator">=</span>Pin<span class="token punctuation">(</span><span class="token string">"P2"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>sda<span class="token operator">=</span>Pin<span class="token punctuation">(</span><span class="token string">"P0"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>freq<span class="token operator">=</span><span class="token number">80000</span><span class="token punctuation">)</span>
+oled<span class="token operator">=</span>SSD1306_I2C<span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">,</span><span class="token number">64</span><span class="token punctuation">,</span>i2c<span class="token punctuation">,</span><span class="token number">0x3c</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> key<span class="token punctuation">.</span>value<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        dac<span class="token punctuation">.</span>write_timed<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>DAC<span class="token punctuation">.</span>CIRCULAR<span class="token punctuation">)</span>
+        oled<span class="token punctuation">.</span>text<span class="token punctuation">(</span>str<span class="token punctuation">(</span>dac<span class="token punctuation">.</span>write_timed<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">from</span> pyb <span class="token keyword">import</span> ADC<span class="token punctuation">,</span>ExtInt
+<span class="token keyword">from</span> ssd1306x <span class="token keyword">import</span> ssd1306_I2C
+<span class="token keyword">from</span> machine <span class="token keyword">import</span> I2C
+
+i2c<span class="token operator">=</span>I2C<span class="token punctuation">(</span>scl<span class="token operator">=</span>Pin<span class="token punctuation">(</span><span class="token string">"P2"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>sda<span class="token operator">=</span>Pin<span class="token punctuation">(</span><span class="token string">"P0"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>freq<span class="token operator">=</span><span class="token number">80000</span><span class="token punctuation">)</span>
+oled<span class="token operator">=</span>SSD1306_I2C<span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">,</span><span class="token number">64</span><span class="token punctuation">,</span>i2c<span class="token punctuation">,</span><span class="token number">0x3c</span><span class="token punctuation">)</span>
+dac<span class="token operator">=</span>DAC<span class="token punctuation">(</span>Pin<span class="token punctuation">(</span><span class="token string">"P6"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+freq<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">,</span><span class="token number">5000</span><span class="token punctuation">]</span>
+buf<span class="token operator">=</span>bytearray<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+buf<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span>
+buf<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">255</span>
+key_node<span class="token operator">=</span><span class="token number">0</span>
+i<span class="token operator">=</span><span class="token number">0</span>
+
+<span class="token keyword">def</span> <span class="token function">key</span><span class="token punctuation">(</span>ext<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> key_node
+    key_node<span class="token operator">=</span><span class="token number">1</span>
+
+ext<span class="token operator">=</span>ExtInt<span class="token punctuation">(</span>Pin<span class="token punctuation">(</span><span class="token string">"P9"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>ExtInt<span class="token punctuation">.</span>IRQ_FALLING<span class="token punctuation">,</span>Pin<span class="token punctuation">.</span>PULL_UP<span class="token punctuation">,</span>key<span class="token punctuation">)</span><span class="token number">1</span>
+
+oled<span class="token punctuation">.</span>fill<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+oled<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> key_node<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">:</span>
+        i<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">1</span>
+        <span class="token keyword">if</span> i<span class="token operator">==</span><span class="token number">4</span><span class="token punctuation">:</span>
+            i<span class="token operator">=</span><span class="token number">0</span>
+        key_node<span class="token operator">=</span><span class="token number">0</span>
+        dac<span class="token punctuation">.</span>write_timed<span class="token punctuation">(</span>buf<span class="token punctuation">,</span>freq<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">*</span>len<span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">,</span>mode<span class="token operator">=</span>DAC<span class="token punctuation">.</span>CIRCULAR<span class="token punctuation">)</span>
+
+        oled<span class="token punctuation">.</span>text<span class="token punctuation">(</span>str<span class="token punctuation">(</span>freq<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"Hz"</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token punctuation">)</span>
+        oled<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">1doctorc1</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://1doctorc1.github.io/2021/03/04/openmv-ji-chu-shi-yan/">https://1doctorc1.github.io/2021/03/04/openmv-ji-chu-shi-yan/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">1doctorc1</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/">
+                                    <span class="chip bg-color">图像识别</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/03/04/openmv-ji-qi-shi-jue/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="openmv机器视觉">
+                        
+                        <span class="card-title">openmv机器视觉</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-04
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            1doctorc1
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/">
+                        <span class="chip bg-color">图像识别</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/03/04/stl-chang-yong-rong-qi-3/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="STL常用容器3">
+                        
+                        <span class="card-title">STL常用容器3</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            1doctorc1
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">1doctorc1</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">9.4k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2021";
+                    var startMonth = "1";
+                    var startDate = "31";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/1doctorc1" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="2281781492@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我：2281781492@qq.com" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="2281781492" class="tooltipped" target="_blank" data-tooltip="QQ联系我:2281781492 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Hexo">
+    <meta name="keywords" content="openmv机器视觉, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Hexo</title>
+    <title>openmv机器视觉 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">openmv机器视觉</h1>
                 </div>
             </div>
         </div>
@@ -430,9 +430,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/">
+                                <span class="chip bg-color">图像识别</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -444,7 +448,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-11
+                    2021-03-04
                 </div>
                 
 
@@ -453,14 +457,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    74
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    7 分
                 </div>
                 
 
@@ -480,16 +484,237 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="hello-hexo"><a href="#hello-hexo" class="headerlink" title="hello hexo"></a>hello hexo</h2><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h1 id="openmv机器视觉"><a href="#openmv机器视觉" class="headerlink" title="openmv机器视觉"></a>openmv机器视觉</h1><h3 id="摄像头应用"><a href="#摄像头应用" class="headerlink" title="摄像头应用"></a>摄像头应用</h3><p>”文件“—-“示例”—-“Basics”—-“helloworld”</p>
+<p>理解OpenMV4摄像头基本编程和配置原理</p>
+<p>OpenMV将摄像头功能封装到Sensor模块中</p>
+<p>sensor模块：</p>
+<ul>
+<li>构造函数 sensor  摄像头对象，通过import直接调用</li>
+<li>使用方法：<ul>
+<li>sensor.reset()  初始化摄像头   <u>清除掉之前摄像头存在的代码对于图片的设置</u></li>
+<li>sensor.set_pixformat(pixformat)<ul>
+<li>设置像素格式，pixformat有3个参数</li>
+<li>sensor.GRAYSCALE:灰度图像，每像素一个字节</li>
+<li>sensor.RGB565:每像素为16位，5位用于红色，6位用于绿色，5位用于蓝色</li>
+<li>sensor.BAYER:占空间小，仅捕捉图像用，不可做图像处理</li>
+</ul>
+</li>
+<li>sensor.set_framesize(framesize)<ul>
+<li>设置每帧大小(即图像尺寸)，常用的framesize参数：</li>
+<li>sensor.QQVGA:160*120</li>
+<li>sensor.QVGA:320*240</li>
+<li>sensor.VGA:640*480</li>
+</ul>
+</li>
+<li>sensor.skip_frames([n,time])   <u>跳过一些刚开始不稳定的时候再开始读取图像</u><ul>
+<li>摄像头配置后跳过n帧或者等待时间time让其稳定，n：跳过帧数，time：等待时间，单位ms</li>
+<li>如果n和time均没指定，则默认跳过300ms的帧</li>
+</ul>
+</li>
+<li>sensor.snapshot()     <u>截取sensor摄像头的视频流的当前帧，给img对象</u><ul>
+<li>使用相机拍摄一张照片，并返回image对象</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>time模块：（区别于utime对象(计时器，延时器)，Timer对象(闹钟)）</p>
+<ul>
+<li>构造函数：<ul>
+<li>clock=time.clock()  创建一个闹钟</li>
+</ul>
+</li>
+<li>使用方法：<ul>
+<li>clock.tick()  开始追踪运行时间   <u>更新图像的帧率</u></li>
+<li>clock.fps()  <ul>
+<li>停止追踪运行时间，并返回当前FPS(每秒帧数)</li>
+<li>在调用该函数前始终首先调用tick</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#导入sensor，time模块</span>
+<span class="token keyword">import</span> sensor<span class="token punctuation">,</span>time<span class="token punctuation">,</span>image
+<span class="token comment" spellcheck="true">#初始化和配置sensor模块</span>
+sensor<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sensor<span class="token punctuation">.</span>set_pixformat<span class="token punctuation">(</span>sensor<span class="token punctuation">.</span>RGB565<span class="token punctuation">)</span>
+snesor<span class="token punctuation">.</span>set_framesize<span class="token punctuation">(</span>QVGA<span class="token punctuation">)</span>
+sensor<span class="token punctuation">.</span>skip_frames<span class="token punctuation">(</span>time<span class="token operator">=</span><span class="token number">2000</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#创建一个计时闹钟</span>
+clock<span class="token operator">=</span>time<span class="token punctuation">.</span>clock
 
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    clock<span class="token punctuation">.</span>tick<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    img<span class="token operator">=</span>sensor<span class="token punctuation">.</span>snapstop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>clock<span class="token punctuation">.</span>fps<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h3 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h3><p>“Drawing”—-“…….”</p>
+<p>采集到照片后，我们会进行一些处理，比如在图片某个位置标记箭头，人脸识别后用矩形框提示</p>
+<p>实验目的：在拍摄的图片上画各种图形</p>
+<p>image对象画图功能：</p>
+<ul>
+<li>构造函数：创建图像，通过拍摄或者读取文件路径获取<ul>
+<li>img=sensor.snapshot()</li>
+<li>img=image.Image(path[copy_to_fb=False])<ul>
+<li>copy_to_fb=True:可以加载大图片</li>
+<li>copy_to_fb=False:不可以加载大图片</li>
+</ul>
+</li>
+<li>示例：img=image.Image(“”,copy_to_fb=True)</li>
+</ul>
+</li>
+<li>使用方法：<ul>
+<li>image.draw_line(x0,y0,x1,y1[color[thickness=1]])<ul>
+<li>画线段，(x0,y0)起始坐标，(x1,y1)终点坐标</li>
+<li>color颜色，如(255,0,0)表示红色</li>
+<li>thickness：粗细</li>
+</ul>
+</li>
+<li>image.draw_rectangle(x,y,w,h,[color,[thickness=1,[fill=False]]])<ul>
+<li>画矩形 ，(x,y)起始坐标</li>
+<li>w：宽度，h：长度</li>
+<li>color：颜色</li>
+<li>thickness边框粗细</li>
+<li>fill：是否填冲</li>
+</ul>
+</li>
+<li>image.draw_circle(x,y,radius,[color],[thickness]=1,[fill=False])<ul>
+<li>画圆 (x,y):圆心，radius：半径</li>
+<li>color颜色</li>
+<li>thickness：线条粗细</li>
+<li>fill：是否填冲</li>
+</ul>
+</li>
+<li>image.draw_string(x,y,text,[color],[scale=1],[mono_space=True])<ul>
+<li>写字符 (x,y):起始坐标，text:字符内容</li>
+<li>color：颜色</li>
+<li>scale：字体大小</li>
+<li>mono_space:强制间距</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pyb<span class="token punctuation">,</span>time<span class="token punctuation">,</span>sensor<span class="token punctuation">,</span>image
+
+sensor<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sensor<span class="token punctuation">.</span>set_pixforamt<span class="token punctuation">(</span>sensor<span class="token punctuation">.</span>RGB565<span class="token punctuation">)</span>
+sensor<span class="token punctuation">.</span>set_framesize<span class="token punctuation">(</span>QVGA<span class="token punctuation">)</span>
+sensor<span class="token punctuation">.</span>skip_frames<span class="token punctuation">(</span>time<span class="token operator">=</span><span class="token number">2000</span><span class="token punctuation">)</span>
+
+clock<span class="token operator">=</span>time<span class="token punctuation">.</span>clock<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    clock<span class="token punctuation">.</span>tick<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    img<span class="token operator">=</span>image<span class="token punctuation">.</span>snapshot<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#画线短</span>
+    img<span class="token punctuation">.</span>draw_line<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span>color<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>thickness<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#画矩形</span>
+    img<span class="token punctuation">.</span>draw_rectangle<span class="token punctuation">(</span><span class="token number">150</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span>color<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">255</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>thickness<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>fill<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#画圆</span>
+    img<span class="token punctuation">.</span>draw_circle<span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">,</span><span class="token number">120</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span>color<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>thickness<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>fill<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#写字符</span>
+    img<span class="token punctuation">.</span>draw_string<span class="token punctuation">(</span><span class="token number">150</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">,</span><span class="token string">"1doctorc1"</span><span class="token punctuation">,</span>color<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span><span class="token number">255</span><span class="token punctuation">,</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>scale<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>momo_space<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>clock<span class="token punctuation">.</span>fps<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h3 id="特征检测"><a href="#特征检测" class="headerlink" title="特征检测"></a>特征检测</h3><p>特征检测，对图像进行特定的特征检测，如：边缘检测、各种形状识别，特征点识别，线性回归</p>
+<p>特征检测位于Feature–Detection</p>
+<h4 id="边缘检测"><a href="#边缘检测" class="headerlink" title="边缘检测"></a>边缘检测</h4><p>轮廓</p>
+<p>识别摄像头采集的图像轮廓并显示</p>
+<p>重要函数：find_edges,位于image模块下</p>
+<p>边缘处理函数：</p>
+<ul>
+<li>构造函数：image.find_edges(edge_type,[threshold])<ul>
+<li>边缘检测，将图像变为黑白，边缘保留白色像素</li>
+<li>【edge_type】处理方式;<ul>
+<li>image.EDGE_SIMPLE  - 简单的阈值高通滤波算法</li>
+<li>image.EDGE_CANNY  - Canny边缘检测算法</li>
+</ul>
+</li>
+<li>【threshold】包含高、低阈值的二元值，默认是(100,200),仅支持灰度图像</li>
+</ul>
+</li>
+<li>直接调用该函数</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#导入sensor等相关模块</span>
+<span class="token keyword">import</span> sensor<span class="token punctuation">,</span>image<span class="token punctuation">,</span>time
+<span class="token comment" spellcheck="true">#初始化和配置sensor模块</span>
+sensor<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sensor<span class="token punctuation">.</span>set_pixformat<span class="token punctuation">(</span>sensor<span class="token punctuation">.</span>RGB565<span class="token punctuation">)</span>
+sensor<span class="token punctuation">.</span>set_framesize<span class="token punctuation">(</span>QVGA<span class="token punctuation">)</span>
+sensor<span class="token punctuation">.</span>skip_frames<span class="token punctuation">(</span>time<span class="token operator">=</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#延时让摄像头稳定</span>
+sensor<span class="token punctuation">.</span>set_gainceiling<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#设置增益，这是官方推荐的参数</span>
+clock<span class="token operator">=</span>time<span class="token punctuation">.</span>clock<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    clock<span class="token punctuation">.</span>tick<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    img<span class="token operator">=</span>sensor<span class="token punctuation">.</span>snapshot<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#拍摄并返回图像</span>
+    <span class="token comment" spellcheck="true">#使用Canny边缘检测器</span>
+    image<span class="token punctuation">.</span>find_edges<span class="token punctuation">(</span>image<span class="token punctuation">.</span>EDGE_Canny<span class="token punctuation">,</span>threshold<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">,</span><span class="token number">80</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#也可以使用简单快速边缘检测</span>
+    image<span class="token punctuation">.</span>find_edges<span class="token punctuation">(</span>image<span class="token punctuation">.</span>EDGE_SIMPLE<span class="token punctuation">,</span>threshold<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>clock<span class="token punctuation">.</span>fps<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h4 id="图形识别"><a href="#图形识别" class="headerlink" title="图形识别"></a>图形识别</h4><p>示例：圆形</p>
+<p>识别图像中的圆形并用画圆功能指示出来</p>
+<p>重要函数：find_circles位于image模块下</p>
+<p>圆形识别函数：</p>
+<ul>
+<li>image.find_circles(roi[x_stride=2,y=stride=1],threshold=2000,x_margin=10,y_margin=10,r_margin=10,r_min=2,r_max,r_step=2)</li>
+<li>找圆函数，返回一个image.circle圆形对象,该圆形对象有4个值：x,y(圆心)，r(半径),magnitude(量级)：量级越大说明识别到的圆的可信度越高</li>
+<li>【roi】识别区域(x,y,w,h),未指定则默认整张图片</li>
+<li>【threshold】阈值。返回大于或等于threshold的圆，调整识别可信度,</li>
+<li>【x_stride】【y_stride】霍夫变换时跳过x,y像素的量</li>
+<li>【x_margin】【y_margin】【r_margin】控制所检测圆的合并调节</li>
+<li>【r_min】【r_max】控制识别圆形的半径范围</li>
+<li>【r_step】控制识别步骤</li>
+<li>直接调用该函数，大部分参数使用默认</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> sensor<span class="token punctuation">,</span>image<span class="token punctuation">,</span>time
+sensor<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sensor<span class="token punctuation">.</span>set_pixformat<span class="token punctuation">(</span>sensor<span class="token punctuation">.</span>GRAYSCALE<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#</span>
+sensor<span class="token punctuation">.</span>set_framesize<span class="token punctuation">(</span>sensor<span class="token punctuation">.</span>QVGA<span class="token punctuation">)</span>
+sensor<span class="token punctuation">.</span>skip_frames<span class="token punctuation">(</span>time<span class="token operator">=</span><span class="token number">2000</span><span class="token punctuation">)</span>
+clock<span class="token operator">=</span>time<span class="token punctuation">.</span>clock<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    clock<span class="token punctuation">.</span>tick<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    img<span class="token operator">=</span>sensor<span class="token punctuation">.</span>snapshot<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>ens_corr<span class="token punctuation">(</span><span class="token number">1.8</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#lens_corr用于去除畸变</span>
+    <span class="token comment" spellcheck="true">#threshold数值的提升会降低识别圆形的总数</span>
+    <span class="token keyword">for</span> c <span class="token keyword">in</span> img<span class="token punctuation">.</span>find_circles<span class="token punctuation">(</span>threshold<span class="token operator">=</span><span class="token number">2000</span><span class="token punctuation">,</span>x_margin<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span>y_margin<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span>r_margin<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span>r_min<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>r_max<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span>r_step<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        img<span class="token punctuation">.</span>draw_circle<span class="token punctuation">(</span>c<span class="token punctuation">.</span>x<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>c<span class="token punctuation">.</span>y<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>c<span class="token punctuation">.</span>r<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>color<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"FPS %f"</span><span class="token operator">%</span>clock<span class="token punctuation">.</span>fps<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<p>也可用该历程识别<strong>圆形图案</strong>或者<strong>球类物体</strong></p>
+<h4 id="矩形识别"><a href="#矩形识别" class="headerlink" title="矩形识别"></a>矩形识别</h4><p>识别图像中的矩形并用画图功能指示出来</p>
+<p>openmv集成了矩形识别find_rects函数，位于image模块下</p>
+<p>矩形识别函数：</p>
+<ul>
+<li>image.find_rects([roi=Auto],threshold=10000)<ul>
+<li>矩形识别函数，返回一个image.rect矩形对象列表</li>
+<li>【roi】识别区域(x,y,w,h),未指定则默认整张图片</li>
+<li>【threshold】阈值，返回大于或等于threshold的矩形，调整识别可信度</li>
+</ul>
+</li>
+<li>直接调用该函数</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#使用quad阈值在图像中找到矩形</span>
+<span class="token comment" spellcheck="true">#四元阈值检测算法检测矩形使用鲁棒的方式</span>
+<span class="token keyword">import</span> sensor<span class="token punctuation">,</span>image<span class="token punctuation">,</span>time
+sensor<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sensor<span class="token punctuation">.</span>set_pixformat<span class="token punctuation">(</span>sensor<span class="token punctuation">.</span>RGB565<span class="token punctuation">)</span>
+sensor<span class="token punctuation">.</span>set_framesize<span class="token punctuation">(</span>sensor<span class="token punctuation">.</span>QQVGA<span class="token punctuation">)</span>
+sensor<span class="token punctuation">.</span>skip_frames<span class="token punctuation">(</span>time<span class="token operator">=</span><span class="token number">2000</span><span class="token punctuation">)</span>
+clock<span class="token operator">=</span>time<span class="token punctuation">.</span>clock<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    clock<span class="token punctuation">.</span>tick<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    img<span class="token operator">=</span>sensor<span class="token punctuation">.</span>snapshot<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">for</span> r <span class="token keyword">in</span> img<span class="token punctuation">.</span>find_rexts<span class="token punctuation">(</span>threshold<span class="token operator">=</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        img<span class="token punctuation">.</span>draw_rectangle<span class="token punctuation">(</span>r<span class="token punctuation">.</span>rect<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>color<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#画矩形显示</span>
+    <span class="token keyword">for</span> p <span class="token keyword">in</span> r<span class="token punctuation">.</span>corners<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment" spellcheck="true">#四角画小圆形</span>
+        img<span class="token punctuation">.</span>draw_circle<span class="token punctuation">(</span>p<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>p<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span>color<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">255</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"FPS %f"</span> <span class="token operator">%</span> clock<span class="token punctuation">.</span>fps<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h3 id="特征点识别"><a href="#特征点识别" class="headerlink" title="特征点识别"></a>特征点识别</h3>
                 
             </div>
             <hr/>
@@ -515,7 +740,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://1doctorc1.github.io/2021/01/11/hello-world/">https://1doctorc1.github.io/2021/01/11/hello-world/</a>
+                    <a href="https://1doctorc1.github.io/2021/03/04/openmv-ji-qi-shi-jue/">https://1doctorc1.github.io/2021/03/04/openmv-ji-qi-shi-jue/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -552,7 +777,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/">
+                                    <span class="chip bg-color">图像识别</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -720,17 +949,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/01/31/c-qi-mo-fu-xi/">
+                <a href="/2021/03/04/openmv-ji-qi-shi-jue/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="C++期末复习">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="openmv机器视觉">
                         
-                        <span class="card-title">C++期末复习</span>
+                        <span class="card-title">openmv机器视觉</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -740,9 +970,55 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-31
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            1doctorc1
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/">
+                        <span class="chip bg-color">图像识别</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/03/04/openmv-ji-chu-shi-yan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="openmv基础实验">
+                        
+                        <span class="card-title">openmv基础实验</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -754,49 +1030,11 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/">
+                        <span class="chip bg-color">图像识别</span>
                     </a>
                     
                 </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/01/11/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-11
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            1doctorc1
-                            
-                        </span>
-                    </div>
-                </div>
-
                 
             </div>
         </div>
